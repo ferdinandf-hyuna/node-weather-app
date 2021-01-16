@@ -6,6 +6,7 @@ const forecast = require('./utils/forecast')
 const { createSecretKey } = require('crypto')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 const address = process.argv[2]
 
@@ -86,6 +87,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
